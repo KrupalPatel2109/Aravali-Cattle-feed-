@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aravali Cattle Feed — Premium quality cattle and poultry feed. Driven by Quality, Built on Trust."
+    />
+    <title>Aravali Agro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="products.css" />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      id="navbar"
+      aria-label="Primary"
+    >
+      <div
+        class="custom-nav container-xl d-flex justify-content-center align-items-center"
+      >
+        <a class="navbar-brand d-lg-none p-0" href="index.html">
+          <img
+            id="logo-mobile"
+            src="Aravali Cattle Feed/logo.png"
+            alt="Aravali Cattle Feed logo"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <!-- Desktop nav (centered with logo in middle) -->
+          <ul
+            class="navbar-nav d-none d-lg-flex flex-row align-items-center justify-content-center gap-3 lh-1"
+          >
+            <li class="nav-item">
+              <a class="nav-link text-light nav-text" href="index.html">HOME</a>
+            </li>
+            <li class="dot-divider"><i class="bi bi-dot fs-1"></i></li>
+            <li class="nav-item">
+              <a class="nav-link text-light nav-text" href="#aboutUs"
+                >ABOUT US</a
+              >
+            </li>
+            <li class="nav-item mx-4 mx-xl-5">
+              <a class="nav-link p-0" href="index.html">
+                <img
+                  id="logo"
+                  src="Aravali Cattle Feed/logo.png"
+                  alt="Aravali Cattle Feed logo"
+                />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light nav-text" href="#ourProducts"
+                >PRODUCTS</a
+              >
+            </li>
+            <li class="dot-divider"><i class="bi bi-dot fs-1"></i></li>
+            <li class="nav-item">
+              <a class="nav-link text-light nav-text" href="#contact-us"
+                >CONTACT US</a
+              >
+            </li>
+          </ul>
+
+          <!-- Mobile nav (stacked vertically) -->
+          <ul
+            class="navbar-nav d-flex d-lg-none flex-column py-2 gap-1 text-center"
+          >
+            <li class="nav-item">
+              <a class="nav-link text-light nav-text" href="index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light nav-text" href="#aboutUs"
+                >ABOUT US</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light nav-text" href="#ourProducts"
+                >PRODUCTS</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light nav-text" href="#contact-us"
+                >CONTACT US</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== PRODUCTS HERO SECTION ===== -->
+    <section id="products-hero">
+      <div class="products-hero-bg"></div>
+      <div class="hero-bottom-gradient"></div>
+      <div
+        class="container h-100 d-flex align-items-center justify-content-center position-relative"
+        style="z-index: 3"
+      >
+        <div class="products-hero-text-box fade-up-trig" data-trig>
+          <h1>OUR PRODUCTS</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CATEGORY PILLS ===== -->
+    <section
+      class="container-xl position-relative z-3 pills-section fade-up-trig"
+      data-trig
+    >
+      <div
+        class="d-flex flex-wrap justify-content-center gap-2 gap-md-3 category-pills-container"
+      >
+        <button class="category-pill active" data-filter="all">
+          ALL PRODUCTS
+        </button>
+        <button class="category-pill" data-filter="premium">
+          PREMIUM FEED
+        </button>
+        <button class="category-pill" data-filter="standard">
+          STANDARD FEED
+        </button>
+        <button class="category-pill" data-filter="mineral">MINERAL MIX</button>
+        <button class="category-pill" data-filter="special">
+          SPECIAL FORMULA
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== SECTION TITLE ===== -->
+    <section class="container-xl text-center mt-5 mb-4 fade-in-trig" data-trig>
+      <div class="products-section-heading">
+        <h6 class="text-uppercase tracking-wider">Premium Quality Nutrition</h6>
+        <h1>Cattle <span class="fw-bold">Feed Products</span></h1>
+      </div>
+    </section>
+
+    <!-- ===== PRODUCT GRID ===== -->
+    <section class="container-xl mb-5 pb-5">
+      <div class="row g-4 justify-content-center px-2 px-md-0">
+        <!-- Card 1 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="0"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="100"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="200"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="0"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="100"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="200"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="0"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="100"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="100"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="100"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="100"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="100"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="100"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="100"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="100"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="100"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="100"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div
+          class="col-12 col-md-6 col-lg-4 fade-up-trig"
+          data-trig
+          data-trig-offset="200"
+        >
+          <div class="product-page-card">
+            <div class="card-top-green position-relative">
+              <img
+                src="Aravali Cattle Feed/pro2.png"
+                alt="Cattle Feed"
+                class="product-bag-img"
+              />
+              <img
+                src="Aravali Cattle Feed/single-cow.png"
+                class="cow-silhouette-bg"
+                alt="silhouette"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="card-bottom-white">
+              <h5 class="product-name">SURAJ</h5>
+              <p class="product-category">
+                Category : <span class="text-green fw-bold">Cattle Feed</span>
+              </p>
+              <button class="contact-now-btn w-100 mt-2">CONTACT NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-us" class="container-xl mt-5">
+      <div class="row">
+        <div class="col-12 text-center mb-5 fade-in-trig" data-trig>
+          <h1
+            id="contact-heading"
+            class="d-inline-block pb-1"
+            style="border-bottom: 2px solid var(--green)"
+          >
+            <span class="green-text">CONTACT</span> US
+          </h1>
+        </div>
+      </div>
+
+      <div class="row gy-5 align-items-center justify-content-between pb-5">
+        <!-- Left Side: Contact Details -->
+        <div class="col-12 col-lg-5 ps-lg-4 slide-left-trig" data-trig>
+          <div class="contact-details-box">
+            <h4 class="mb-1 text-dark contact-help-title">
+              We're here to help you
+            </h4>
+            <h1 class="mb-4 text-dark contact-main-title">Contact Details</h1>
+
+            <div class="d-flex align-items-center mb-4 pb-2">
+              <div
+                class="contact-icon bg-green text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+              >
+                <i class="bi bi-telephone-fill"></i>
+              </div>
+              <div>
+                <h5 class="mb-1 text-dark contact-detail-heading">
+                  We're on Call
+                </h5>
+                <p class="mb-0 mt-0 text-dark contact-detail-text">
+                  +91 9825064607, +91 9825186819, +91 9428123357
+                </p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center mb-4 pb-2">
+              <div
+                class="contact-icon bg-green text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+              >
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+              <div>
+                <h5 class="mb-1 text-dark contact-detail-heading">Our Mail</h5>
+                <p class="mb-0 mt-0 text-dark contact-detail-text">
+                  aravali.mohit@gmail.com
+                </p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center mb-4 pb-2">
+              <div
+                class="contact-icon bg-green text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+              >
+                <i
+                  class="bi bi-send-fill"
+                  style="transform: translate(-2px, 1px)"
+                ></i>
+              </div>
+              <div>
+                <p class="mb-0 text-dark contact-detail-text">
+                  Bagodra-Dholka Highway Gangad, Ahmedabad - 382240
+                </p>
+                <p class="mb-0 text-dark mt-0 contact-gst-text">
+                  GST NO : 24AATCA0343GIZV CIN NO : U15134GJ2019PTC111318
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Contact Form -->
+        <div class="col-12 col-lg-6 slide-right-trig" data-trig>
+          <div class="contact-form-container p-4 p-md-5 bg-white">
+            <h3 class="mb-4 d-inline-block pb-2 contact-form-title">
+              CONTACT US
+            </h3>
+
+            <form>
+              <div class="mb-4">
+                <label for="name" class="form-label text-dark form-label-custom"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter Your Name"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  for="email"
+                  class="form-label text-dark form-label-custom"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Your Email"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  for="message"
+                  class="form-label text-dark form-label-custom"
+                  >Message</label
+                >
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="4"
+                  placeholder="Enter Your Message"
+                ></textarea>
+              </div>
+              <button type="button" class="more-btn submit-btn w-100 mt-2">
+                SUBMIT MESSAGE
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="footer">
+      <!-- Top silhouette image layer -->
+      <img
+        src="Aravali Cattle Feed/Ex Images/footer-backgrounds-original.png"
+        alt="Footer Landscape Silhouette"
+        class="footer-top-bg w-100 d-block"
+      />
+
+      <!-- Main green background footer area -->
+      <div class="footer-body py-3">
+        <div class="container-xl">
+          <!-- Navigation Pills Row -->
+          <div class="row justify-content-center mb-4 fade-up-trig" data-trig>
+            <div class="col-12 d-flex flex-wrap justify-content-center gap-3">
+              <a href="#" class="footer-pill">HOME</a>
+              <a href="#" class="footer-pill">ABOUT US</a>
+              <a href="#" class="footer-pill">CONTACT</a>
+              <a href="#" class="footer-pill">UPDATES</a>
+              <a href="#" class="footer-pill">PRODUCTS</a>
+            </div>
+          </div>
+
+          <!-- Dashed Divider Line -->
+          <div class="row justify-content-center mb-5">
+            <div class="col-10 col-md-8 col-lg-6">
+              <div class="footer-dashed-line"></div>
+            </div>
+          </div>
+
+          <!-- 3-Column Content Row -->
+          <div class="row g-4 align-items-center justify-content-center mb-5">
+            <!-- Left Company Address Card -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div
+                class="footer-card d-flex flex-column justify-content-center"
+              >
+                <h5 class="mb-2">ARAVALI PASHU-AAHAR UDHYOG</h5>
+                <p class="mb-0 text-white">
+                  Sarkhej-Bavla Highway,<br />Changodar-Ahmedabad-382213
+                </p>
+              </div>
+            </div>
+
+            <!-- Center Logo -->
+            <div class="col-12 col-md-8 col-lg-4 text-center">
+              <img
+                src="Aravali Cattle Feed/logo.png"
+                alt="Aravali Agro Logo"
+                class="img-fluid px-4 px-md-5 mx-auto"
+                style="max-width: 380px"
+              />
+            </div>
+
+            <!-- Right Company Address Card -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div
+                class="footer-card d-flex flex-column justify-content-center"
+              >
+                <h5 class="mb-2">ARAVALI AGRO INDIA PVT. LTD</h5>
+                <p class="mb-0 text-white">
+                  Bagodra-Dholka Highway<br />Gangad, Ahmedabad-382240
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subfooter Divider Line -->
+        <hr class="subfooter-line" />
+
+        <!-- Bottom Copyright / Credits Line -->
+        <div class="container-xl mt-3">
+          <div class="row text-white credits-row">
+            <div
+              class="col-12 col-md-6 text-center text-md-start mb-2 mb-md-0 d-flex align-items-center justify-content-center justify-content-md-start"
+            >
+              <p class="mb-0" style="font-size: 14px; font-weight: 400">
+                Designed by nextacademyindia.com
+              </p>
+            </div>
+            <div
+              class="col-12 col-md-6 text-center text-md-end d-flex align-items-center justify-content-center justify-content-md-end"
+            >
+              <p class="mb-0" style="font-size: 14px; font-weight: 400">
+                Copyright &copy; 2026 Aravali Cattle feed
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/trig-js/src/trig.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
