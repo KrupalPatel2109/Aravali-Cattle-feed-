@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(
+    () => document.getElementById("splash").classList.add("hidden"),
+    2600,
+  );
+
   // --- Dynamic Products Filter Logic ---
 
   // 1. Array of possible category IDs
