@@ -881,7 +881,7 @@ a {
 }
 
 .fade-up-trig.trig {
-  animation: fadeUpTrig 5s forwards ease-out;
+  animation: fadeUpTrig 0.8s forwards ease-out;
   visibility: visible;
 }
 
@@ -1138,3 +1138,4 @@ a {
     font-size: 14px;
   }
 }
+
