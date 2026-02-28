@@ -9,6 +9,30 @@
   --goldlt: #fdf6e9;
 }
 
+/* wide‑page safety rules – avoid unexpected horizontal scrolls */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+  overflow-x: hidden;
+}
+
+/* make every image/video responsive by default */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* SPLASH SCREEN dimensions must cover the viewport exactly */
+#splash {
+  width: 100vw;
+  height: 100vh;
+}
+
 /* ---------- Base Reset ---------- */
 *,
 *::before,
@@ -63,20 +87,15 @@ a {
 }
 
 .splash-icon {
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  width: 20%;
+  /* height: 80px; */
+  /* background: rgba(255, 255, 255, 0.12); */
+  /* border: 2px solid rgba(255, 255, 255, 0.25); */
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: splashPulse 1.5s ease-in-out infinite alternate;
-}
-
-.splash-icon i {
-  font-size: 2.2rem;
-  color: #fff;
 }
 
 @keyframes splashPulse {
@@ -108,7 +127,7 @@ a {
 }
 
 .splash-bar {
-  width: 200px;
+  width: min(200px, 80vw);
   height: 3px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 2px;
@@ -119,7 +138,7 @@ a {
 
 .splash-progress {
   height: 100%;
-  background: linear-gradient(90deg, var(--gold2), var(--gold));
+  background: linear-gradient(90deg, var(--accent));
   border-radius: 2px;
   animation: progress 2.2s ease forwards;
 }
@@ -145,6 +164,7 @@ a {
     transform: none;
   }
 }
+
 /* ============================================================
    NAVBAR
    ============================================================ */
@@ -170,7 +190,9 @@ a {
 
 /* Desktop logo — overhangs below navbar */
 #logo {
-  width: 200px;
+  /* allow the logo to shrink on narrower viewports without breaking
+     the navbar layout; maximum stays 200px for large screens */
+  width: clamp(150px, 20vw, 200px);
   height: auto;
   opacity: 1;
   object-fit: contain;
@@ -184,7 +206,7 @@ a {
 
 /* Mobile logo — compact version */
 #logo-mobile {
-  width: 120px;
+  width: clamp(80px, 25vw, 120px);
   height: auto;
   object-fit: contain;
   background-color: var(--green);
@@ -212,7 +234,8 @@ a {
    ============================================================ */
 #hero {
   position: relative;
-  margin-top: -175px;
+  top: -175px; /* switch from margin to top so flow isn’t affected */
+  margin-top: 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -268,6 +291,12 @@ a {
   font-weight: bold;
 }
 
+#hero-contant h1:nth-child(2) {
+  /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0); */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(245, 245, 245, 0.846);
+}
+
 #hero-contant h4 {
   font-weight: 500;
   font-family: var(--font-family-hindi);
@@ -293,7 +322,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 8px;
   background-color: var(--green);
   width: min(300px, 100%);
@@ -350,6 +379,159 @@ a {
   margin-top: -10px;
 }
 
+#res-btn {
+  visibility: hidden;
+  position: relative;
+  /* padding: 20px 35px; */
+  padding: 10px 50px;
+  /* background: #ffffff; */
+  background: #216e34;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  /* box-shadow: 0px 0px 10px 0px rgb(255, 255, 255); */
+  border-radius: 100px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.star-1 img {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 img {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-3 img {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-4 img {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-5 img {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-6 img {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+#res-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 0 80px #ffffff8c;
+}
+
+#res-btn:hover .star-1 img {
+  position: absolute;
+  top: -25%;
+  left: -15%;
+  width: 20px;
+  height: auto;
+  filter: drop-shadow(0 0 10px var(--green));
+  z-index: 2;
+}
+
+#res-btn:hover .star-2 img {
+  position: absolute;
+  top: 35%;
+  left: -22%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px var(--green));
+  z-index: 2;
+}
+
+#res-btn:hover .star-3 img {
+  position: absolute;
+  top: 80%;
+  left: -10%;
+  width: 10px;
+  height: auto;
+  filter: drop-shadow(0 0 10px var(--green));
+  z-index: 2;
+}
+
+#res-btn:hover .star-4 img {
+  position: absolute;
+  top: -25%;
+  left: 105%;
+  width: 20px;
+  height: auto;
+  filter: drop-shadow(0 0 10px var(--green));
+  z-index: 2;
+}
+
+#res-btn:hover .star-5 img {
+  position: absolute;
+  top: 30%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px var(--green));
+  z-index: 2;
+}
+
+#res-btn:hover .star-6 img {
+  position: absolute;
+  top: 80%;
+  left: 105%;
+  width: 10px;
+  height: auto;
+  filter: drop-shadow(0 0 10px var(--green));
+  z-index: 2;
+}
+
+.fil0 {
+  fill: var(--green);
+}
+
 /* ============================================================
    ABOUT US SECTION
    ============================================================ */
@@ -361,7 +543,7 @@ a {
   font-family: var(--font-family);
   font-weight: 600;
   font-size: clamp(26px, 4vw, 40px);
-  margin-top: 50px;
+  /* margin-top: 50px; */
   margin-bottom: 20px;
 }
 
@@ -857,6 +1039,12 @@ a {
   visibility: hidden;
 }
 
+/* when we filter products we toggle `d-none` and animate opacity; give
+   those wrappers a short transition so the JS fade-in feels smooth */
+.fade-up-trig[data-category] {
+  transition: opacity 0.3s ease;
+}
+
 /* Base transforms */
 .fade-up-trig {
   transform: translateY(40px);
@@ -962,6 +1150,7 @@ a {
 
   /* Remove the overlap since mobile has no overhanging logo */
   #hero {
+    top: 0;
     margin-top: 0;
     min-height: 80vh;
   }
@@ -993,8 +1182,14 @@ a {
   }
 }
 
-/* --- Small tablets / large phones (≤ 767px) --- */
-@media (max-width: 767px) {
+/* --- Small tablets / large phones (≤ 768px) --- */
+@media (max-width: 768px) {
+  #res-btn {
+    visibility: visible;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
   #about-text {
     margin-top: 30px;
     margin-bottom: 12px;
@@ -1009,7 +1204,8 @@ a {
   }
 
   .main-btn {
-    width: 220px;
+    display: none;
+    visibility: hidden;
   }
 
   #our-vision-text {
