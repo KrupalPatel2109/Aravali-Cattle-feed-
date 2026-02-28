@@ -1,109 +1,25 @@
-/* ---------- CSS Custom Properties ---------- */
-:root {
-  --green: #216e34;
-  --accent: #b6ca00;
-  --font-family: "Poppins", sans-serif;
-  --font-family-hindi: "Tiro Devanagari Hindi", sans-serif;
-}
-
-/* ---------- Base Reset ---------- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
+/* ---------- Products page styles (after common style.css) ---------- */
+/* basic background colour, most resets and variables live in style.css */
 body {
-  font-family: var(--font-family);
+  background-color: white;
   overflow-x: hidden;
-  background-color: #f6f9f6; /* Very faint green tint for the products page */
 }
 
-a {
-  text-decoration: none;
-}
-
-.main-btn:focus-visible,
-.more-btn:focus-visible,
-.nav-link:focus-visible,
-.navbar-toggler:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-/* ============================================================
-   NAVBAR
-   ============================================================ */
-#navbar {
-  background-color: var(--green);
-  z-index: 11;
-  position: relative;
-  padding-left: 50px !important;
-}
-
-.navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.6);
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-.nav-text {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-/* Desktop logo — overhangs below navbar */
-#logo {
-  width: 200px;
-  height: auto;
-  opacity: 1;
-  object-fit: contain;
-  margin-bottom: -50px;
-  background-color: var(--green);
-  border-radius: 0 0 20px 20px;
-  padding-bottom: 8px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-/* Mobile logo — compact version */
-#logo-mobile {
-  width: 120px;
-  height: auto;
-  object-fit: contain;
-  background-color: var(--green);
-  border-radius: 0 0 12px 12px;
-  padding: 4px 16px 6px;
-  margin-bottom: -6px;
-}
-
-.nav-link {
-  transition: color 0.2s ease-in;
-}
-
-.nav-link:hover {
-  color: var(--accent) !important;
-}
-
-.dot-divider {
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-}
-
-/* ============================================================
-   PRODUCTS PAGE HERO
-   ============================================================ */
+/* HERO SECTION */
 #products-hero {
   position: relative;
-  margin-top: -178px;
+  top: -178px;
   height: min(65vh, 600px);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 991px) {
+  #products-hero {
+    top: 0;
+    margin-top: 0;
+  }
 }
 
 .products-hero-bg {
@@ -116,6 +32,20 @@ a {
   background-size: cover;
   background-position: center;
   z-index: 1;
+}
+
+.hero-bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  background: linear-gradient(
+    /* same stops that were used previously */ rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
 }
 
 .products-hero-text-box {
@@ -135,244 +65,7 @@ a {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-.hero-bottom-gradient {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20vh;
-  background: linear-gradient(
-    to bottom,
-    rgba(246, 249, 246, 0) 0%,
-    #f6f9f6 100%
-  );
-  z-index: 2;
-  pointer-events: none;
-}
-
-.green-text {
-  color: var(--green);
-}
-
-/* ============================================================
-   MAIN BUTTON (reusable across sections)
-   ============================================================ */
-.main-btn {
-  margin: 26px auto 0;
-  font-family: var(--font-family);
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid black;
-  border-radius: 8px;
-  background-color: var(--green);
-  width: min(300px, 100%);
-  min-height: 44px;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.main-btn p {
-  width: 100%;
-  text-align: center;
-  margin: 0;
-  padding: 10px 12px 12px;
-  font-size: clamp(16px, 2.5vw, 25px);
-  line-height: 1;
-}
-
-/* Animated cow reveal on hover */
-.box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: -44px;
-  transform: translateY(100%);
-  transition: transform 0.5s ease;
-}
-
-.main-btn:hover .box {
-  transform: translateY(0);
-}
-
-.box img {
-  margin-top: -20px;
-  width: 15%;
-}
-
-.box img:nth-child(1) {
-  margin-bottom: -35px;
-  transform: scaleX(-1);
-}
-
-.box img:nth-child(3) {
-  margin-bottom: -35px;
-}
-
-.box .grass {
-  display: flex;
-  align-items: baseline;
-}
-
-.box .grass img {
-  width: 50px;
-  margin-top: -10px;
-}
-
-/* ============================================================
-   ABOUT US SECTION
-   ============================================================ */
-#aboutUs {
-  padding-top: 10px;
-}
-
-#about-text {
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: clamp(26px, 4vw, 40px);
-  margin-top: 50px;
-  margin-bottom: 20px;
-}
-
-#about-text span {
-  color: var(--green);
-}
-
-#about-content-box {
-  border: 2px solid var(--green);
-  border-radius: 20px;
-}
-
-#about-content span {
-  color: var(--green);
-}
-
-#about-main-text {
-  line-height: 1.3;
-}
-
-#about-p {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: clamp(14px, 1.8vw, 20px);
-  line-height: 2;
-  margin: 0;
-}
-
-/* ============================================================
-   OUR VISION SECTION
-   ============================================================ */
-#our-vision-text {
-  font-size: clamp(26px, 4vw, 40px);
-  font-weight: 600;
-  font-family: var(--font-family);
-  margin-top: 70px;
-  margin-bottom: 20px;
-  text-align: start;
-  line-height: 1;
-}
-
-#our-vision-text span {
-  color: var(--green);
-}
-
-#our-vision-p {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: clamp(14px, 1.8vw, 20px);
-  margin: 0;
-  text-align: start;
-}
-
-#cow-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 12px;
-}
-
-/* ============================================================
-   OUR MISSION SECTION
-   ============================================================ */
-.border-container {
-  position: relative;
-  height: auto;
-  border-radius: 20px;
-  border: 2px solid var(--green);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.mission-cow {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 20px;
-}
-
-#our-mission-head-text {
-  font-size: clamp(26px, 4vw, 40px);
-  font-weight: 600;
-  font-family: var(--font-family);
-  text-align: center;
-  margin-top: 25px;
-  margin-bottom: 20px;
-}
-
-#our-mission-p {
-  font-size: clamp(14px, 1.8vw, 20px);
-  font-weight: 600;
-  text-align: center;
-  line-height: 2;
-  margin-top: 5px;
-  padding: 0 clamp(10px, 3vw, 32px);
-}
-
-#our-mission .main-btn {
-  margin-top: 10px;
-}
-
-/* ============================================================
-   TRUST ICONS SECTION
-   ============================================================ */
-#trust {
-  padding-bottom: 40px;
-}
-
-.circle {
-  width: 150px;
-  height: 150px;
-  background-color: var(--green);
-  border-radius: 50%;
-  transition: transform 0.5s ease;
-}
-
-.circle:hover {
-  transform: scale(1.05);
-}
-
-.circle .trust-icon {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  object-position: center;
-  margin-left: 1px;
-  cursor: pointer;
-  transition: transform 0.5s ease;
-}
-
-/* ============================================================
-   PILLS NAVIGATION
-   ============================================================ */
+/* CATEGORY PILLS */
 .pills-section {
   margin-top: -30px;
 }
@@ -396,28 +89,19 @@ a {
   color: white;
 }
 
-/* ============================================================
-   SECTION TITLES
-   ============================================================ */
+/* SECTION TITLES */
 .products-section-heading h6 {
   color: #799d79;
   font-size: 13px;
   letter-spacing: 2.5px;
-  font-weight: 600;
-  margin-bottom: 6px;
 }
-
 .products-section-heading h1 {
-  color: var(--green);
-  font-family: var(--font-family); /* Or Poppins depending on design */
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 500;
+  font-size: clamp(30px, 6vw, 54px);
+  font-weight: 700;
   margin: 0;
 }
 
-/* ============================================================
-   PRODUCT CARDS GRID
-   ============================================================ */
+/* PRODUCT CARDS */
 .product-page-card {
   border-radius: 12px;
   overflow: hidden;
@@ -537,436 +221,22 @@ a {
   color: var(--green);
 }
 
-/* Animated arrow */
-.arrow {
-  color: var(--accent);
-  display: inline-block;
-  animation: upDown 0.5s ease-in-out infinite alternate;
+/* animate filtered items */
+.fade-up-trig[data-category] {
+  transition: opacity 0.3s ease;
 }
 
-@keyframes upDown {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-10px);
-  }
-}
-
-/* ============================================================
-   CONTACT US SECTION
-   ============================================================ */
-#contact-us {
-  padding-top: 40px;
-  overflow: hidden;
-}
-
-#contact-heading {
-  font-size: clamp(28px, 4vw, 40px);
-  font-weight: 600;
-  font-family: var(--font-family);
-  margin-bottom: 0;
-}
-
-/* Typography Contact Utilities */
-.contact-help-title {
-  font-size: clamp(20px, 2.5vw, 24px);
-  font-weight: 500;
-}
-
-.contact-main-title {
-  font-size: clamp(36px, 4.5vw, 56px);
-  font-weight: 700;
-  letter-spacing: -1px;
-  line-height: 1.1;
-}
-
-.contact-form-title {
-  font-size: clamp(24px, 3.5vw, 36px);
-  font-weight: 600;
-  border-bottom: 1.5px solid var(--green);
-}
-
-.contact-detail-heading {
-  font-size: 20px;
-  font-weight: 400;
-  border-bottom: 1.2px solid #555;
-  padding-bottom: 4px;
-  display: inline-block;
-}
-
-.contact-detail-text {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.contact-gst-text {
-  font-size: 14.5px;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.form-label-custom {
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.submit-btn {
-  max-width: none;
-  font-size: 20px;
-  font-weight: 600;
-  border-radius: 8px;
-}
-
-/* Icon Utilities */
-.bg-green {
-  background-color: var(--green);
-}
-
-.contact-icon {
-  box-shadow: 0 4px 6px rgba(33, 110, 52, 0.4);
-  width: 65px;
-  height: 65px;
-  flex-shrink: 0;
-  font-size: 32px;
-}
-
-.contact-form-container {
-  border: 2px solid var(--green);
-  border-radius: 12px;
-}
-
-.contact-form-container .form-control {
-  border: 1.5px solid #333;
-  border-radius: 6px;
-  padding: 10px 14px;
-  font-size: 16px;
-}
-
-.contact-form-container .form-control::placeholder {
-  color: #adb5bd;
-  font-weight: 400;
-}
-
-.contact-form-container .form-control:focus {
-  border-color: var(--green);
-  box-shadow: 0 0 0 0.25rem rgba(33, 110, 52, 0.25);
-}
-
-/* ============================================================
-   FOOTER SECTION
-   ============================================================ */
-#footer {
-  margin-top: 20px;
-}
-
-#footer img {
-  pointer-events: none; /* prevent drag on structural silhouette */
-}
-
-.footer-top-bg {
-  margin-bottom: -2px;
-  filter: hue-rotate(0deg) brightness(1.1) contrast(74%);
-}
-
-.footer-body {
-  background-color: var(--green);
-}
-
-.footer-pill {
-  border: 1px solid var(--accent);
-  border-radius: 50px;
-  color: white;
-  padding: 6px 28px;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.footer-pill:hover {
-  background-color: var(--accent);
-  color: var(--green);
-}
-
-.footer-dashed-line {
-  position: relative;
-  width: 100%;
-  height: 0;
-  border-top: 1.5px dashed var(--accent);
-  margin-top: 10px;
-}
-
-/* Small diamond/dots at ends of dashed line representing the design */
-.footer-dashed-line::before,
-.footer-dashed-line::after {
-  content: "";
-  position: absolute;
-  top: -4px;
-  width: 6px;
-  height: 6px;
-  background-color: var(--accent);
-  transform: rotate(45deg);
-}
-
-.footer-dashed-line::before {
-  left: 0;
-}
-.footer-dashed-line::after {
-  right: 0;
-}
-
-.footer-card {
-  border: 1px solid var(--accent);
-  border-radius: 14px;
-  padding: 24px 20px;
-  text-align: center;
-  min-height: 120px;
-}
-
-.footer-card h5 {
-  color: var(--accent);
-  font-weight: 600;
-  font-size: clamp(15px, 1.5vw, 18px);
-}
-
-.footer-card p {
-  font-size: clamp(14px, 1.2vw, 16px);
-  font-weight: 400;
-  line-height: 1.4;
-}
-
-.subfooter-line {
-  border: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
-  margin: 0;
-}
-
-/* ============================================================
-   TRIG.JS ANIMATIONS
-   ============================================================ */
-.fade-up-trig,
-.fade-in-trig,
-.slide-left-trig,
-.slide-right-trig,
-.scale-in-trig {
-  opacity: 0;
-  visibility: hidden;
-}
-
-/* Base transforms */
-.fade-up-trig {
-  transform: translateY(40px);
-}
-
-.slide-left-trig {
-  transform: translateX(-40px);
-}
-
-.slide-right-trig {
-  transform: translateX(40px);
-}
-
-.scale-in-trig {
-  transform: scale(0.85);
-}
-
-/* Active states appended by Trig.js */
-.fade-in-trig.trig {
-  animation: fadeInTrig 0.8s forwards ease-out;
-  visibility: visible;
-}
-
-.fade-up-trig.trig {
-  animation: fadeUpTrig 0.8s forwards ease-out;
-  visibility: visible;
-}
-
-.slide-left-trig.trig {
-  animation: slideLeftTrig 0.8s forwards ease-out;
-  visibility: visible;
-}
-
-.slide-right-trig.trig {
-  animation: slideRightTrig 0.8s forwards ease-out;
-  visibility: visible;
-}
-
-.scale-in-trig.trig {
-  animation: scaleInTrig 0.8s forwards ease-out;
-  visibility: visible;
-}
-
-/* Keyframes */
-@keyframes fadeInTrig {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeUpTrig {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideLeftTrig {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideRightTrig {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes scaleInTrig {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* ============================================================
-   MEDIA QUERIES — ordered from largest to smallest
-   ============================================================ */
-
-/* --- XL screens and below (≤ 1199px) --- */
-@media (max-width: 1199px) {
-  #our-mission-head-text {
-    margin-top: 20px;
-  }
-}
-
-/* --- Tablets and below (≤ 991px) — navbar collapses here --- */
-@media (max-width: 991px) {
-  #navbar {
-    padding-left: 0 !important;
-  }
-
-  #navbar .navbar-collapse {
-    width: 100%;
-    margin-top: 8px;
-    padding: 4px 10px;
-    border-radius: 10px;
-    background-color: var(--green);
-  }
-
-  /* Remove the overlap since mobile has no overhanging logo */
-  #hero {
-    margin-top: 0;
-    min-height: 80vh;
-  }
-
-  /* Make footer logo smaller to fit nicely */
-  #footer .img-fluid {
-    max-width: 250px !important;
-  }
-
-  #hero-contant {
-    padding-top: 40px;
-  }
-
-  #hero-contant h1 {
-    line-height: 0.95;
-  }
-
-  .more-btn {
-    width: 200px;
-  }
-}
-
-/* --- Small tablets / large phones (≤ 767px) --- */
+/* responsive tweaks */
 @media (max-width: 767px) {
-  #about-text {
-    margin-top: 30px;
-    margin-bottom: 12px;
+  .card-top-green {
+    height: 200px;
   }
-
-  #about-main-text {
-    font-size: 22px;
-  }
-
-  #about-p {
-    text-align: center;
-  }
-
-  .main-btn {
-    width: 220px;
-  }
-
-  #our-vision-text {
-    margin-top: 30px;
-    text-align: center;
-  }
-
-  #our-vision-p {
-    text-align: center;
-  }
-
-  .border-container {
-    border-radius: 14px;
-  }
-
-  .mission-cow {
-    border-radius: 14px;
-  }
-
-  #our-mission-head-text {
-    margin-top: 10px;
-    margin-bottom: 12px;
-  }
-
-  .circle {
-    width: 105px;
-    height: 105px;
-  }
-
-  .more-btn {
-    width: 180px;
-    font-size: 16px;
+  .product-bag-img {
+    height: 150px;
   }
 }
-
-/* --- Small phones (≤ 575px) --- */
 @media (max-width: 575px) {
-  #hero {
-    min-height: 70vh;
-  }
-
-  #hero-contant {
-    padding-top: 30px;
-  }
-
-  .more-btn {
-    width: 180px;
-    font-size: 16px;
-  }
-
-  /* Footer logo on phone */
-  #footer .img-fluid {
-    max-width: 200px !important;
-  }
-}
-
-/* --- Extra-small phones (≤ 420px) --- */
-@media (max-width: 420px) {
-  .main-btn p {
-    margin-top: 3px;
-  }
-
-  .box {
-    width: 100%;
-    margin-top: -39px;
-  }
-
-  .more-btn {
-    width: 160px;
-    font-size: 14px;
+  .card-top-green {
+    height: 180px;
   }
 }
