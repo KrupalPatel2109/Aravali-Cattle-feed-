@@ -536,7 +536,8 @@ a {
    ABOUT US SECTION
    ============================================================ */
 #aboutUs {
-  padding-top: 10px;
+  padding-top: 0;
+  margin-top: -100px;
 }
 
 #about-text {
@@ -1180,6 +1181,11 @@ a {
   .more-btn {
     width: 200px;
   }
+
+  #aboutUs {
+    padding-top: 10px;
+    margin-top: 0;
+  }
 }
 
 /* --- Small tablets / large phones (≤ 768px) --- */
@@ -1334,4 +1340,3 @@ a {
     font-size: 14px;
   }
 }
-
