@@ -115,9 +115,9 @@ if (contactForm) {
 
     const name = contactForm.querySelector('input[type="text"]').value;
     const phone = contactForm.querySelector('input[type="tel"]').value;
-    const message = contactForm.querySelector('textarea').value;
+    const message = contactForm.querySelector("textarea").value;
 
-    const whatsappNumber = "916351292060";
+    const whatsappNumber = "919825186819";
 
     const whatsappMessage = `Hello Aravali Cattle Feed, Name: ${name} Phone: ${phone} Message: ${message}`;
 
