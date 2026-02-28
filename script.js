@@ -1,8 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(
-    () => document.getElementById("splash").classList.add("hidden"),
-    2600,
-  );
+  const splash = document.getElementById("splash");
+  // lock scrolling while splash is visible
+  document.body.style.overflow = "hidden";
+
+  setTimeout(() => {
+    splash.classList.add("hidden");
+    document.body.style.overflow = ""; // restore default
+
+    // once the splash is gone we can safely fire trig again so the
+    // hero/above‑the‑fold animations run when the user actually sees them
+    if (window.trig && typeof window.trig.trigInit === "function") {
+      // remove any classes trig may have added during initial load
+      document
+        .querySelectorAll(
+          ".fade-up-trig, .fade-in-trig, .slide-left-trig, .slide-right-trig, .scale-in-trig",
+        )
+        .forEach((el) => {
+          el.classList.remove(
+            "trig",
+            "trig-down",
+            "trig-up",
+            "trig-scroll-down",
+            "trig-scroll-up",
+          );
+        });
+      window.trig.trigInit();
+    }
+  }, 2600);
 
   // --- Dynamic Products Filter Logic ---
 
@@ -61,18 +85,48 @@ document.addEventListener("DOMContentLoaded", () => {
             filter === "all" ||
             wrapper.getAttribute("data-category") === filter
           ) {
-            // Show item
-            wrapper.style.display = "block";
-            // Clean brief fade interaction for smoothness
+            // reveal by removing Bootstrap hide utility and fade in
+            wrapper.classList.remove("d-none");
+            wrapper.style.opacity = "0";
             setTimeout(() => {
               wrapper.style.opacity = "1";
             }, 50);
           } else {
-            // Hide matched item
-            wrapper.style.display = "none";
+            // hide using the utility class so grid stays intact
+            wrapper.classList.add("d-none");
           }
         });
       });
     });
   }
 });
+
+const resBtn = document.getElementById("res-btn");
+if (resBtn) {
+  resBtn.addEventListener("click", () => {
+    window.location.href = "products.html";
+  });
+}
+
+const contactForm = document.querySelector("form");
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = contactForm.querySelector('input[type="text"]').value;
+    const phone = contactForm.querySelector('input[type="tel"]').value;
+    const message = contactForm.querySelector('textarea').value;
+
+    const whatsappNumber = "916351292060";
+
+    const whatsappMessage = `Hello Aravali Cattle Feed, Name: ${name} Phone: ${phone} Message: ${message}`;
+
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
+
+    contactForm.reset();
+  });
+}
